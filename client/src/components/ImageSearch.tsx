@@ -50,7 +50,7 @@ export const ImageSearch = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            userEmail: user?.email,
+            userEmail: user?.sub,
             link: link,
           }),
         }
