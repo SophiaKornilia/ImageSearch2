@@ -51,7 +51,7 @@ const app = express()
           res.status(201).json({userEmail,link});
         } catch (error) {
           res.status(500).json({ message: "Internal server error" });
-        }
+        } 
       });
 
       app.get("/api/favouriteImages/:userEmail", async (req, res) => {

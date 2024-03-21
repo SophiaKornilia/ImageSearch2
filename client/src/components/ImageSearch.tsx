@@ -10,6 +10,9 @@ export const ImageSearch = () => {
   const [selectedLink, setSelectedLink] = useState("");
   const { user } = useAuth0();
 
+  console.log(selectedLink);
+  
+
   const handleClick = async (inputValue: string) => {
     //skicka in en parameter som är de jag söker med. Inputfältet eller de nya ordet.
     console.log("handleclick", inputValue);

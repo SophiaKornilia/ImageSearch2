@@ -42,14 +42,18 @@ export const FavouriteImages = () => {
   }, [user?.sub]);
 
   return (
-    <div>
+    <div id="imagesResult">
       {favoriteImages &&
         favoriteImages.map((image, index) => (
-          <img
-            key={index}
-            src={image.imageLink}
-            alt={`Favorite Image ${index}`}
-          />
+          <div id="imageSearchContainer">
+            <div className="imgContainer">
+              <img
+                key={index}
+                src={image.imageLink}
+                alt={`Favorite Image ${index}`}
+              />
+            </div>
+          </div>
         ))}
     </div>
   );
