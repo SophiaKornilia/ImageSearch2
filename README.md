@@ -1,32 +1,27 @@
-ImageSearch2
+This project is a web application created by me Kornilia, that allows a user to search for images and save their favorite ones. It can be useful if one needs a simple and convenient method to organize and access their favorite images.
 
-Detta projekt är en webbapplikation som gör det möjligt för en användare att söka efer bilder och spara sina favoritbilder. Det kan vara användbart om man enkelt och smidit behöver en metod för att organisera och komma 
-åt sina favoritbilder.
-
-För att komma igång med projektet behöver du först skapa och konfigurera konton för följande externa tjänster:
+To get started with the project, you need to first create and configure accounts for the following external services:
 
 Auth0
-1. Gå till [Auth0-webbplatsen](https://auth0.com/) och skapa ett konto om du inte redan har ett.
-2. Skapa en ny applikation och konfigurera den enligt dina behov.
-3. Notera klient-ID och klienthemlighet som du får från Auth0.
-4. Följ instruktionerna 
+1. Go to the [Auth0 website](https://auth0.com/) and create an account if you don't already have one.
+2. Create a new application and configure it according to your needs.
+3. Note the client ID and client secret provided by Auth0.
+4. Follow the instructions provided.
 
 Google Custom Search Engine
-1. Gå till [Google Custom Search Engine](https://programmablesearchengine.google.com/about/) och logga in med ditt Google-konto.
-2. Skapa en ny anpassad sökmotor och få tillgång till din API-nyckel.
-3. Konfigurera sökmotorn enligt dina önskemål och notera den unika sökmotor-ID som genereras.
+1. Go to [Google Custom Search Engine](https://programmablesearchengine.google.com/about/) and log in with your Google account.
+2. Create a new custom search engine and obtain your API key.
+3. Configure the search engine according to your preferences and note the unique search engine ID generated.
 
-När du har skapat och konfigurerat dina konton och API-nycklar, följ stegen nedan för att komma igång med projektet:
-1. Klona projektet till din lokala maskin.
-2. Installera alla nödvändiga beroenden genom att köra `npm install`.
-3. Skapa en `.env`-fil i rotmappen för projektet och dina miljövariabler.
-4. Starta servern genom att köra `nodemon server` om du har nodemon installerat.
-5. Starta react applikationen genom att köra `npm run dev`. 
-6. Öppna webbläsaren och gå till den angivna URL:en för att börja använda applikationen.
+Once you have created and configured your accounts and API keys, follow the steps below to get started with the project:
+1. Clone the project to your local machine.
+2. Install all necessary dependencies by running `npm install`.
+3. Create a `.env` file in the root directory of the project and add your environment variables.
+4. Start the server by running `nodemon server` if you have nodemon installed.
+5. Start the React application by running `npm run dev`.
+6. Open your browser and navigate to the provided URL to begin using the application.
 
-- Auth0: Används för autentisering och hantering av användaruppgifter. För att kunna använda projektet behöver användare skapa ett konto hos Auth0 och
- konfigurera klient-ID och klienthemlighet enligt anvisningarna i projektdokumentationen.
-- Google Custom Search Engine: Används för att söka efter bilder. För att kunna använda sökfunktionen behöver användare skapa och konfigurera en egen 
-anpassad sökmotor hos Google Custom Search Engine och tillhandahålla API-nyckeln och sökmotor-ID:t för konfigurationen av projektet.
+- Auth0: Used for authentication and user data management. To use the project, users need to create an account with Auth0 and configure the client ID and client secret as instructed in the project documentation.
+- Google Custom Search Engine: Used for image searching. To use the search functionality, users need to create and configure their own custom search engine with Google Custom Search Engine and provide the API key and search engine ID for the project configuration.
 
-Dessa externa tjänster är viktiga för projektets funktionalitet och utgör en integrerad del av dess uppbyggnaden och användarupplevelsen.
+These external services are crucial for the functionality of the project and form an integral part of its architecture and user experience.
