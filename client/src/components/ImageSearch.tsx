@@ -11,10 +11,8 @@ export const ImageSearch = () => {
   const { user } = useAuth0();
 
   console.log(selectedLink);
-  
 
   const handleClick = async (inputValue: string) => {
-    //skicka in en parameter som är de jag söker med. Inputfältet eller de nya ordet.
     console.log("handleclick", inputValue);
 
     const response = await fetch(
@@ -70,14 +68,6 @@ export const ImageSearch = () => {
     }
   };
 
-  // const handleAddToFavorites = (link: string) => {
-  //   setSelectedLink(link); // Sätt selectedLink till länken som klickades på
-  //   console.log(link);
-  //   console.log(selectedLink);
-
-  //   handelAddClick(link); // Anropa handelAddClick-funktionen för att skicka länken till servern
-  // };
-
   return (
     <div>
       <input
@@ -86,13 +76,14 @@ export const ImageSearch = () => {
         onChange={(e) => setInputValue(e.target.value)}
       ></input>
       <button onClick={() => handleClick(inputValue)}>Search</button>
-      <p
+      <span
         onClick={() => {
           handleWordClick();
         }}
-      >
-        {wordResponse}
-      </p>
+      ><div>
+     {wordResponse && <span onClick={()=>{}}>Menade du {wordResponse}?</span>}
+      </div>
+      </span>
       <p>{searchTime}</p>
 
       <div id="imagesResult">
