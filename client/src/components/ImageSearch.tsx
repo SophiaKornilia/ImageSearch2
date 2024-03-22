@@ -7,10 +7,7 @@ export const ImageSearch = () => {
   const [searchTime, setSearchTime] = useState();
   const [wordResponse, setWordResponse] = useState("");
   const [images, setImages] = useState<{ link: string }[]>([]);
-  const [selectedLink, setSelectedLink] = useState("");
   const { user } = useAuth0();
-
-  console.log(selectedLink);
 
   const handleClick = async (inputValue: string) => {
     console.log("handleclick", inputValue);
@@ -25,6 +22,8 @@ export const ImageSearch = () => {
 
     const data = await response.json();
     setSearchTime(data.searchInformation.searchTime);
+    console.log(data.searchInformation.searchTime);
+    
 
     if (data.spelling && data.spelling.correctedQuery) {
       setWordResponse(data.spelling.correctedQuery);
@@ -41,8 +40,6 @@ export const ImageSearch = () => {
 
   const handelAddClick = async (link: string) => {
     try {
-      setSelectedLink(link);
-
       const response = await fetch(
         "http://localhost:3000/api/favouriteImages",
         {
@@ -80,11 +77,16 @@ export const ImageSearch = () => {
         onClick={() => {
           handleWordClick();
         }}
-      ><div>
-     {wordResponse && <span onClick={()=>{}}>Menade du {wordResponse}?</span>}
-      </div>
+      >
+        <div id="correctedWord">
+          {wordResponse && (
+            <span onClick={() => {}}>
+              Menade du <a>{wordResponse}</a>?
+            </span>
+          )}
+        </div>
       </span>
-      <p>{searchTime}</p>
+      <div>{searchTime && <p>Söktid: {searchTime}</p>}</div>
 
       <div id="imagesResult">
         {images?.map((item, index) => (

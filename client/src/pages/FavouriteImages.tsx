@@ -32,8 +32,6 @@ export const FavouriteImages = () => {
         } else {
           setFavoriteImages([]);
         }
-
-        // setFavoriteImages(data.myFavImages || [])
       } catch (error) {
         console.error("error", error);
       }
@@ -42,19 +40,22 @@ export const FavouriteImages = () => {
   }, [user?.sub]);
 
   return (
-    <div id="imagesResult">
-      {favoriteImages &&
-        favoriteImages.map((image, index) => (
-          <div id="imageSearchContainer">
-            <div className="imgContainer">
-              <img
-                key={index}
-                src={image.imageLink}
-                alt={`Favorite Image ${index}`}
-              />
+    <>
+      <h3>My favoriteImages</h3>
+      <div id="imagesResult">
+        {favoriteImages &&
+          favoriteImages.map((image, index) => (
+            <div key={index} id="imageSearchContainer">
+              <div className="imgContainer">
+                <img
+                  key={index}
+                  src={image.imageLink}
+                  alt={`Favorite Image ${index}`}
+                />
+              </div>
             </div>
-          </div>
-        ))}
-    </div>
+          ))}
+      </div>
+    </>
   );
 };
